@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Harpy Eagle Game</title>
+<style>
+body {
+  font-family: sans-serif;
+  background-color: #f0f0f0; /* Light gray background */
+}
+#game-container {
+  width: 800px;
+  height: 600px;
+  margin: 0 auto;
+  position: relative; /* Needed for absolute positioning of monkeys */
+  border: 2px solid #ddd; /* Adds a subtle border */
+  background-color: #e0e0e0; /* Slightly darker game area */
+}
+.monkey {
+  position: absolute;
+  width: 80px;
+  height: 60px;
+  line-height: 60px; /* Center text vertically */
+  text-align: center;
+  cursor: pointer;
+  border-radius: 5px; /* Slightly rounded corners */
+  font-weight: bold;
+  color: white; /* White text on the monkeys */
+}
+#description {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 20px;
+  text-align: center;
+}
+#score {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+}
+</style>
+</head>
+<body>
+<div id="game-container"></div>
+<div id="description">You are the all-powerful harpy eagle. Click the monkeys to FEED!!</div>
+<div id="score">Score: 0</div>
+
+<script>
+const gameContainer = document.getElementById('game-container');
+const scoreDisplay = document.getElementById('score');
+let score = 0;
+const motivationalPhrases = [
+  "Excellent Hunt!", "Magnificent Catch!", "Apex Predator!", "Harpy Power!", "Soaring High!", "Jungle King!", "Crush with your powerful TALONS!", "Feast on the blood of your enemies!", "Your powerful beak is unstoppable!", "Your harpy eagle wife just swooned ;)", "No monkey can escape your grasp!", "Crush their heads with your 530 psi grip strength!", "It's a bird! It's a plane! It's... a bird!", "More like harPOON eagle", "You are unbeatable!", "The hunger will never be satiated!", "The SUPERIOR national eagle", "The WORLD is your battleground"
+];
+
+function createMonkey() {
+  const monkey = document.createElement('div');
+  monkey.classList.add('monkey');
+  monkey.textContent = 'MONKEY';
+  monkey.style.backgroundColor = `rgb(${100 + Math.random() * 55}, ${50 + Math.random() * 55}, ${Math.random() * 55})`;
+
+  const x = Math.random() * (gameContainer.offsetWidth - monkey.offsetWidth);
+  const y = Math.random() * (gameContainer.offsetHeight - monkey.offsetHeight);
+  monkey.style.left = x + 'px';
+  monkey.style.top = y + 'px';
+
+  monkey.addEventListener('click', () => {
+    score++;
+    scoreDisplay.textContent = `Score: ${score}`;
+    const phrase = motivationalPhrases[Math.floor(Math.random() * motivationalPhrases.length)];
+    alert(phrase); // Or display the phrase within the game
+    monkey.remove(); // Remove the clicked monkey
+    createMonkey(); // Add a new monkey
+  });
+
+  gameContainer.appendChild(monkey);
+}
+
+for (let i = 0; i < 5; i++) {
+  createMonkey();
+}
+</script>
+
+</body>
+</html>
