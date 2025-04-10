@@ -1,0 +1,58 @@
+.homebg {
+    background-image: url('images/junglebackground.jpeg');
+}
+
+.whitebodytext {
+    font-size: 17px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    font-weight: 300;
+    background-color: darkgreen;
+}
+
+.subheadings {
+    font: 50px bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
+    padding-top: 0px;
+    padding-bottom: 25px;
+    margin: 25px;
+}
+
+a {
+    color: white;
+    background-color: darkgreen;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h1 {
+    color: darkgreen; 
+    font: 100px bold;
+    text-align: center; 
+    background-color: white; 
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+h2 {
+    color: darkgreen; 
+    font: 170px bold;
+    text-align: center; 
+    background-color: white; 
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.videocontainer {
+    text-align: center;
+}
+
+.linkfloatright {
+    float: right;
+}
+
+.picturemiddle {
+    text-align: center;
+}
+
+.linkmiddle {
+    text-align: center;
+}
